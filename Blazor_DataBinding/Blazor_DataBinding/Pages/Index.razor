@@ -1,0 +1,22 @@
+﻿@page "/"
+
+<PageTitle>Index</PageTitle>
+
+<h1> @Mensagem </h1>
+<h2> @Saudacao()</h2>
+<h3> @Mensagem2</h3>
+<input @bind="@Mensagem2"/>
+
+<button @onclick="AtualizarMensagem"> Atualizar Mensagem </button>
+
+@code{
+    private string Mensagem { get; set; } = "Olá, Leonardo.";
+
+    private string Mensagem2 { get; set; } = "Olá, Leonardo.";
+
+    private string Saudacao() =>  "Bem-vindo ao Blazor";
+
+    private void AtualizarMensagem() => Mensagem="Olá, Blazor, tudo bem?";
+}
+
+
